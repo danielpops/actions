@@ -3,9 +3,7 @@ on: [pull_request]
 
 jobs:
   build:
-    # Job name is Greeting
     name: Run Tests, do linting, etc
-    # This job runs on Linux
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
