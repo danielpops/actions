@@ -1,0 +1,16 @@
+name: Do something on PRs
+on: [pull_request]
+
+jobs:
+  build:
+    # Job name is Greeting
+    name: Run Tests, do linting, etc
+    # This job runs on Linux
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-14.04, ubuntu-16.04, ubuntu-18.04]
+
+    steps:
+      - uses: actions/checkout@v2
+      - run: make test
